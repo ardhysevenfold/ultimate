@@ -1,0 +1,18 @@
+import hashlib
+import os
+
+# Path file target (ubah sesuai nama script kamu)
+file_path = "/storage/emulated/0/SC/SC-FIXX/Max-Evo¹-v5/MAX-EVO-VIP/shared/max-evo¹.py"
+output_path = file_path.replace(".py", ".hash")
+
+# Hitung SHA256
+with open(file_path, "rb") as f:
+    data = f.read()
+hash_value = hashlib.sha256(data).hexdigest()
+
+# Simpan hasil hash ke file .hash
+with open(output_path, "w") as f:
+    f.write(hash_value)
+
+print(f"✅ HASH berhasil dibuat: {output_path}")
+print(f"Nilai HASH: {hash_value}")
