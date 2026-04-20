@@ -1,7 +1,7 @@
 
 # -*- coding: utf-8 -*-
 import os,sys,base64,json,hashlib,hmac
-#5
+
 def _u(x):
     try:
         o=json.loads(x); return o["h"][o["i"]]
