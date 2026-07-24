@@ -1,0 +1,242 @@
+import requests
+import json
+import sys
+import os
+import time
+from requests import session
+import datetime
+from random import SystemRandom
+import random
+from datetime import datetime
+from sh import whoami
+import getpass
+import pytz  
+import datetime
+
+
+P = '\033[95m'
+CYAN = '\033[96m'
+DARK = '\033[36m'
+B = '\033[94m'
+G = '\033[92m'
+Y = '\033[93m'
+R = '\033[91m'
+BO = '\033[1m'
+UG = '\033[35m'
+PT = '\033[37m'
+PT1 = '\33[5;47;31m'
+UNDER = '\033[4m'
+N = '\033[0m'
+H = '\33[5;41;37m'
+H1 = '\33[2;41;37m'
+L = '\033[0;0m'
+CY = '\33[5;37;45m'
+BB = '\33[7;49;93m'
+BR = '\33[7;49;33m'
+GR1 = '\33[5;49;90m'
+GR = '\33[7;49;90m'
+WW1 = '\33[7;41;32m'
+WW = '\33[5;31;42m'
+MG = '\33[7;49;36m'
+WH = '\33[7;49;37m'
+PTH = '\33[7;49;37m'
+RED = '\033[31m'
+GRY = '\033[90m'
+WW2 = '\33[5;35;46m'
+
+print("")
+print("")
+print(f"{RED}▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬")
+print(f"""{H}
+███╗░░░███╗███████╗███╗░░██╗██╗░░░██╗░░░░░░░██████╗░█████╗░
+████╗░████║██╔════╝████╗░██║██║░░░██║░░░░░░██╔════╝██╔══██╗
+██╔████╔██║█████╗░░██╔██╗██║██║░░░██║█████╗╚█████╗░██║░░╚═╝
+██║╚██╔╝██║██╔══╝░░██║╚████║██║░░░██║╚════╝░╚═══██╗██║░░██╗
+██║░╚═╝░██║███████╗██║░╚███║╚██████╔╝░░░░░░██████╔╝╚█████╔╝
+╚═╝░░░░░╚═╝╚══════╝╚═╝░░╚══╝░╚═════╝░░░░░░░╚═════╝░░╚════╝░
+{L}""")
+print(f"{RED}▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬")
+print("")
+print(f" {H}OWNER WHATSAPP +79163762732{L}{PT}•━━━━━━━━━━━━━━━━━━━━━━━━━━━━━•{L}")
+print(f"•━━━━━━━━━━━━━━━━━━━━━━━━━━━━━•{PTH} Your Device is Registered {L}")
+print(f"{RED}▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬")
+print(f"                    {H} List SC {L}-{WW} 55FIVE• {L} \n{PT}▬▬▬▬▬▬▬▬▬{G}•{PT}▬▬▬▬▬▬▬▬▬{L} {PT}▬▬▬▬▬▬▬▬▬{G}•{PT}▬▬▬▬▬▬▬▬▬{L} {PT}▬▬▬▬▬▬▬▬▬{G}•{PT}▬▬▬▬▬▬▬▬▬{L}\n       {WW2} NEW {L}              {WW2} MECHA {L}            {WW2} ULTIMATE {L} \n{PT}▬▬▬▬▬▬▬▬▬{G}•{PT}▬▬▬▬▬▬▬▬▬{L} {PT}▬▬▬▬▬▬▬▬▬{G}•{PT}▬▬▬▬▬▬▬▬▬{L} {PT}▬▬▬▬▬▬▬▬▬{G}•{PT}▬▬▬▬▬▬▬▬▬{L}")
+print(f"{PTH}┃1. Super Sonic   ┃{L} {PTH}┃{L}{PT1}{MG}{PT1}V.Pentagon 30s   {L}{PTH}┃{L} {PTH}┃21.{L}{PT1}{BO}Aurora 30s    {L}{PTH}┃{L}")
+print(f"{PTH}┃2. Sonic         ┃{L} {PTH}┃{L}{PT1}{MG}{PT1}N.VVIP-V3 30s    {L}{PTH}┃{L} {PTH}┃25.{L}{PT1}{BO}Follow - N V2 {L}{PTH}┃{L}")
+print(f"{PTH}┃3. Magic         ┃{L} {PTH}┃        -        ┃{L} {PTH}┃28.{L}{PT1}{BO}Ripper Forex  {L}{PTH}┃{L}")
+print(f"{PTH}┃4. Prime         ┃{L} {PTH}┃        -        ┃{L} {PTH}┃26.{L}{PT1}{BO}Hack Mode v6  {L}{PTH}┃{L}")
+print(f"{PTH}┃5. Regulator     ┃{L} {PTH}┃        -        ┃{L} {PTH}┃39.{L}{PT1}{BO}IRON-MAN™     {L}{PTH}┃{L}")
+print(f"{PTH}┃6. Ultra Insting ┃{L} {PT}▬▬▬▬▬▬▬▬▬{G}•{PT}▬▬▬▬▬▬▬▬▬{L} {PTH}┃42.{L}{PT1}{BO}Time-Stop™    {L}{PTH}┃{L}")
+print(f"{PTH}┃7. Black Hole    ┃{L}      {WW2} Limited {L}      {PTH}┃47.{L}{PT1}{BO}Black-panther {L}{PTH}┃{L}")
+print(f"{PTH}┃8. Evo-X         ┃{L} {PT}▬▬▬▬▬▬▬▬▬{G}•{PT}▬▬▬▬▬▬▬▬▬{L} {PTH}┃92.{L}{PT1}{BO}Risk-X        {L}{PTH}┃{L}")
+print(f"{PTH}┃9. Cool-Down     ┃{L} {PTH}┃51.{L}{PT1}{BO}kompen-Searah {L}{PTH}┃{L} {PTH}┃76.{L}{PT1}{BO}Risk-X_v2     {L}{PTH}┃{L}")
+print(f"{PTH}┃10.Fast-X        ┃{L} {PTH}┃69.{L}{PT1}Hack Mode {L}{PTH}    ┃{L} {PTH}┃67.{L}{PT1}{BO}X-VVIP{L}{PT1}{BO}        {L}{PTH}┃{L}")
+print(f"{PTH}┃11.Super-Magic   ┃{L} {PTH}┃99.{L}{PT1}Hack Mode v2 {L}{PTH} ┃{L} {PTH}┃37.{L}{PT1}{BO}Imposible - X{L}{PT1}{BO} {L}{PTH}┃{L}")
+print(f"{PTH}┃12.Elipse        ┃{L} {PTH}┃88.{L}{PT1}Hack Mode v3 {L}{PTH} ┃{L} {PTH}┃62.{L}{PT1}{BO}Flash         {L}{PTH}┃{L}")
+print(f"{PTH}┃13.Prisma        ┃{L} {PTH}┃77.{L}{PT1}Hack Mode v4 {L}{PTH} ┃{L} {PTH}┃66.{L}{PT1}{BO}NoVa-X        {L}{PTH}┃{L}")
+print(f"{PTH}┃14.Glizer        ┃{L} {PTH}┃55.{L}{PT1}Hack Mode v5 {L}{PTH} ┃{L} {PTH}┃61.{L}{PT1}{BO}Don't Go      {L}{PTH}┃{L}")
+print(f"{PTH}┃15.Golden_Frezee {L}{PTH}┃{L} {PTH}┃44.{L}{PT1}HM Circle𓆩♡𓆪 {L}{PTH} ┃{L} {PTH}┃84.{L}{PT1}{BO}B-Breker      {L}{PTH}┃{L}")
+print(f"{PTH}┃16.Gatotkaca     {L}{PTH}┃{L} {PTH}┃33.{L}{PT1}{BO}•Gladiator•  {L}{PTH} ┃{L} {PTH}┃82.{L}{PT1}{BO}Venus         {L}{PTH}┃{L}")
+print(f"{PTH}┃17.{L}{PT1}{BO}VIP      {L}{PTH}     ┃{L} {PTH}┃90.{L}{PT1}{BO}Master Trend {L}{PTH} ┃{L} {PTH}┃85.{L}{PT1}{BO}Infinity 30s  {L}{PTH}┃{L}")
+print(f"{PTH}┃18.{L}{PT1}{BO}VVIP      {L}{PTH}    ┃{L} {PTH}┃30.{L}{PT1}{BO}Follow - N {L}{PTH}   ┃{L} {PTH}┃86.{L}{PT1}{BO}VVIP™ 30s     {L}{PTH}┃{L}")
+print(f"{PTH}┃71.{L}{PT1}{BO}HELLS 30S     {L}{PTH}┃{L} {PTH}┃68.{L}{PT1}{BO}Betrix 30s    {L}{PTH}┃{L} {PTH}┃87.{L}{PT1}{BO}Hayabuza 30s  {L}{PTH}┃{L}")
+print(f"{PTH}┃78.{L}{PT1}{BO}H2R 30S       {L}{PTH}┃{L} {PTH}┃79.{L}{PT1}{BO}CRAZY 30S     {L}{PTH}┃{L} {PTH}┃73.{L}{PT1}{BO}Hack-Mode 30s {L}{PTH}┃{L}")
+print(f"{PTH}┃74.{L}{PT1}{BO}Fusion 30S    {L}{PTH}┃{L} {PTH}┃75.{L}{PT1}{BO}Grafixed 30s  {L}{PTH}┃{L} {PTH}┃97.{L}{PT1}{BO}Terminator 30s{L}{PTH}┃{L}")
+print(f"{PTH}┃96.{L}{PT1}{BO}Rasberry 30S  {L}{PTH}┃{L} {PTH}┃72.{L}{PT1}{BO}Respection 30s{L}{PTH}┃{L} {PTH}┃83.{L}{PT1}{BO}Bioshock 30s  {L}{PTH}┃{L}")
+print(f"{PTH}┃63.{L}{PT1}{BO}Avenger 30S   {L}{PTH}┃{L} {PTH}┃64.{L}{PT1}{BO}T-VVIP 30s    {L}{PTH}┃{L} {PTH}┃65.{L}{PT1}{BO}T-BLOCK 30s   {L}{PTH}┃{L}")
+print(f"{PTH}┃59.{L}{PT1}{BO}Prime_v2 30S  {L}{PTH}┃{L} {PTH}┃54.{L}{PT1}{BO}Long_trend 30s{L}{PTH}┃{L} {PTH}┃91.{L}{PT1}{BO}D-Trend 30s   {L}{PTH}┃{L}")
+print(f"{RED}▬▬▬▬▬▬▬▬▬{G}•{RED}▬▬▬▬▬▬▬▬▬{L} {RED}▬▬▬▬▬▬▬▬▬{G}•{RED}▬▬▬▬▬▬▬▬▬{L} {RED}▬▬▬▬▬▬▬▬▬{G}•{RED}▬▬▬▬▬▬▬▬▬{L}")
+print(f"{PT1}   Refresh   :{L} {WW1} pp {L} {PTH}┃56.{L}{PT1}Turn-Back-X   {L}{PTH}┃{L} {PTH}┃81.{L}{PT1}{BO}Thanos 30s    {L}{PTH}┃{L}")
+print(f"{PT}▬▬▬▬▬▬▬▬▬{G}•{PT}▬▬▬▬▬▬▬▬▬{L} {PT}▬▬▬▬▬▬▬▬▬{G}•{PT}▬▬▬▬▬▬▬▬▬{L} {PT}▬▬▬▬▬▬▬▬▬{G}•{PT}▬▬▬▬▬▬▬▬▬{L}")
+print("")
+pilih = input(f"{PTH} Pilih {L}{H} Nomor {L} : ")
+if pilih == '1':
+    os.system("python smain2.py")
+elif pilih == '2':
+    os.system("python main2.py")
+elif pilih == 'pp':
+    os.system("cd && cd ultimate && python choice.py")
+elif pilih == '3':
+    os.system("python md1.py")
+elif pilih == '4':
+    os.system("python prime.py")
+elif pilih == '5':
+    os.system("python mulai.py")
+elif pilih == '6':
+    os.system("python SX.py")
+elif pilih == '7':
+    os.system("python BH.py")
+elif pilih == '8':
+    os.system("python Evo-X.py")
+elif pilih == '9':
+    os.system("python CD.py")
+elif pilih == '10':
+    os.system("python FX.py")
+elif pilih == '11':
+    os.system("python smd1.py")
+elif pilih == '12':
+    os.system("python ep1.py")
+elif pilih == '13':
+    os.system("python PR1.py")
+elif pilih == '14':
+    os.system("python G1.py")
+elif pilih == '15':
+    os.system("python GF.py")
+elif pilih == '16':
+    os.system("python GK.py")
+elif pilih == '17':
+    os.system("python V.py")
+elif pilih == '18':
+    os.system("python VV.py")
+elif pilih == '#':
+    os.system("python RX.py")
+elif pilih == 'A':
+    os.system("python DV.py")
+elif pilih == 'B':
+    os.system("python eagle4.py")
+elif pilih == 'C':
+    os.system("python electra.py")
+elif pilih == 'D':
+    os.system("python NB2.py")
+elif pilih == '69':
+    os.system("python HM1.py")
+elif pilih == '99':
+    os.system("python HMv2L.py")
+elif pilih == '88':
+    os.system("python HMv3L.py")
+elif pilih == '77':
+    os.system("python HMv4L.py")
+elif pilih == '55':
+    os.system("python HMv5L.py")
+elif pilih == '44':
+    os.system("python HMvLc.py")
+elif pilih == '33':
+    os.system("python GL.py")
+elif pilih == '90':
+    os.system("python MT.py")
+elif pilih == '51':
+    os.system("python KS.py")
+elif pilih == '30':
+    os.system("python FN.py")
+elif pilih == '21':
+    os.system("python AU.py")
+elif pilih == '25':
+    os.system("python FN2.py")
+elif pilih == '28':
+    os.system("python RP.py")
+elif pilih == '26':
+    os.system("python HM6.py")
+elif pilih == '39':
+    os.system("python iMc.py")
+elif pilih == '42':
+    os.system("python TSC.py")
+elif pilih == '47':
+    os.system("python BP.py")
+elif pilih == '56':
+    os.system("python KBc.py")
+elif pilih == '92':
+    os.system("python RK.py")
+elif pilih == '76':
+    os.system("python RS.py")
+elif pilih == '67':
+    os.system("python XVV.py")
+elif pilih == '37':
+    os.system("python i-x.py")
+elif pilih == '62':
+    os.system("python Flash.py")
+elif pilih == '66':
+    os.system("python NoVa.py")
+elif pilih == '61':
+    os.system("python DG.py")
+elif pilih == '84':
+    os.system("python b-breker.py")
+elif pilih == '82':
+    os.system("python venus.py")
+elif pilih == '85':
+    os.system("python infinity55.py")
+elif pilih == '86':
+    os.system("python VV30s.py")    
+elif pilih == '81':
+    os.system("python thanosC.py")
+elif pilih == '71':
+    os.system("python hells.py")
+elif pilih == '68':
+    os.system("python betrix.py")
+elif pilih == '87':
+    os.system("python hayabuza.py")
+elif pilih == '78':
+    os.system("python H2R.py")
+elif pilih == '79':
+    os.system("python CRZ.py")
+elif pilih == '73':
+    os.system("python H1.py")
+elif pilih == '74':
+    os.system("python Fusionc.py")
+elif pilih == '75':
+    os.system("python Fusiongrf.py")
+elif pilih == '97':
+    os.system("python Tchoice.py")
+elif pilih == '96':
+    os.system("python rsb.py")
+elif pilih == '72':
+    os.system("python respection.py")
+elif pilih == '83':
+    os.system("python bioshock.py")
+elif pilih == '63':
+    os.system("python avenger.py")
+elif pilih == '64':
+    os.system("python TVV.py")
+elif pilih == '65':
+    os.system("python t-block.py")
+elif pilih == '59':
+    os.system("python prm2.py")
+elif pilih == '54':
+    os.system("python long_trend.py")
+elif pilih == '91':
+    os.system("python dtd.py")
+elif pilih == 'V':
+    os.system("python cpt.py")
+elif pilih == 'N':
+    os.system("python cvv.py")
+else :
+	os.system("python choice.py")
