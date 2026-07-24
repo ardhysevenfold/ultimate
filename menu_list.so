@@ -9,8 +9,6 @@ from random import SystemRandom
 import random
 from datetime import datetime
 from sh import whoami
-import getpass
-import pytz  
 import datetime
 
 
